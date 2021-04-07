@@ -1,5 +1,8 @@
 const APIURL="https://api.github.com/users/"
 const main=document.getElementById("main")
+const reposDiv=document.getElementById("reposDiv")
+
+
 async function gitHubProfile(name){
     const response=await fetch(APIURL+name)
     const data = await response.json()
@@ -28,13 +31,37 @@ async function gitHubProfile(name){
     main.appendChild(newElm) 
 }
 
+async function showRepo(name){
+    const response=await fetch(APIURL+name+"/repos")
+    const Data=await response.json()
+    // console.log(Data)
+    const Elm=document.createElement("ul")
+    Elm.classList.add("repos")
+    Data.forEach((data)=>{
+        console.log(data.name)
+        const list=document.createElement("li")
+        const anchor=document.createElement("a")
+        list.appendChild(anchor)
+        Elm.appendChild(list)
+        anchor.innerText=data.name
+        anchor.href=data.html_url
+        anchor.target="_blank"
+   reposDiv.appendChild(Elm)
+    })
+
+   
+
+}
+
 const search=document.getElementById("search")
 const btn=document.getElementById("btn")
 
 btn.addEventListener("click",()=>{
     main.classList.add("active")
     main.innerHTML=""
+    reposDiv.innerHTML=""
     gitHubProfile(search.value)
+    showRepo(search.value)
     search.value=""
 })
 

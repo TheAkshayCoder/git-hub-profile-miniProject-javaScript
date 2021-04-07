@@ -12,7 +12,7 @@ body{
     background: #03001e;  
 background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);  
 background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e); 
-
+flex-direction: column;
 }
 
 main{
@@ -29,9 +29,7 @@ main{
 }
 
 .input{
-    position: absolute;
-    top: 1rem;
-    padding: 1rem;
+    margin: 1rem;
 }
 
 
@@ -98,8 +96,44 @@ h1:hover{
     color: #fffbd5;
 
 }
+.reposDiv{
+    background-color: #7303c0;
+    border-radius: 2rem;
+    margin: 1rem;
+}
+
+.repos{
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+li{
+    margin: 0.5rem;
+}
+
+
+li a{
+ text-decoration: none;   
+ background-color: rgb(53, 2, 100);
+ padding: 0.2rem;
+ padding-right:1rem ;
+ padding-left:1rem ;
+ margin: 1rem;
+ color: white;
+}
+
+li a:hover{
+    border-radius: 1rem;
+    background-color:#b569e7 ;
+    box-shadow: 2px 2px 2px #d5a5f5;
+}
 
 @media screen and (max-width: 1400px) {
+    
     .main{
         flex-direction: column;
         /* background-color: black; */
