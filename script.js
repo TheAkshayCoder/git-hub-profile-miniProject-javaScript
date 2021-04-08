@@ -6,6 +6,7 @@ const reposDiv=document.getElementById("reposDiv")
 async function gitHubProfile(name){
     const response=await fetch(APIURL+name)
     const data = await response.json()
+    console.log(data)
     const newElm=document.createElement("div")
     newElm.classList.add("main")
     if (data.type!="User"){
@@ -20,7 +21,6 @@ async function gitHubProfile(name){
                 <h3 class="created">${data.created_at}</h3>
                 <h3 class="followers">followers:${data.followers}</h3>
                 <h3 class="following">following:${data.following}</h3>
-                <h3 class="subscription">subscription:</h3>
                 <h3 class="subscription">repos: ${data.public_repos}</h3>
                 <p class="bio">Bio:${data.bio}</p>
     </div>`
