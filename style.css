@@ -135,6 +135,10 @@ li a:hover {
 }
 
 @media screen and (max-width: 1400px) {
+
+  main{
+      width: fit-content;
+  }  
   .main {
     flex-direction: column;
     /* background-color: black; */
@@ -148,7 +152,7 @@ li a:hover {
     width: 40%;
   }
   .info {
-    font-size: 0.8rem;
+    font-size: 1rem;
     overflow: auto;
   }
 }
