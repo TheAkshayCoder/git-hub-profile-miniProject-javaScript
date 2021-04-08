@@ -21,7 +21,7 @@ async function gitHubProfile(name){
                 <h3 class="created">${data.created_at}</h3>
                 <h3 class="followers">followers:${data.followers}</h3>
                 <h3 class="following">following:${data.following}</h3>
-                <h3 class="subscription">repos: ${data.public_repos}</h3>
+                <h3 class="repos">repos: ${data.public_repos}</h3>
                 <p class="bio">Bio:${data.bio}</p>
     </div>`
     }
